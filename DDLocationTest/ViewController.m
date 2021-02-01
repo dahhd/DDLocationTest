@@ -25,8 +25,12 @@
     label.frame = CGRectMake(0, scrennHeight/2-50, scrennWidth, 30);
     label.font = [UIFont systemFontOfSize:18];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
     label.text = @"开启钉钉虚拟定位";
+    if (@available(iOS 13.0, *)) {
+        label.textColor = [UIColor systemGrayColor];
+    } else {
+        label.textColor = [UIColor blackColor];
+    }
     
     [self.view addSubview:label];
 }
